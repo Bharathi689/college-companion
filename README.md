@@ -1,60 +1,96 @@
-# 🏛️ College Companion App
-### Pingle Govt. College for Women (A), Wanapathy, Hanumakonda
+College Companion App
+Pingle Government College for Women (Autonomous), Wanaparthy, Hanumakonda
 
-A full-stack web application built with **React** (frontend) + **Flask** (backend) featuring:
+A full-stack web application designed to streamline academic and administrative activities within the institution. This system integrates a React-based frontend with a Flask-powered backend, delivering a modern, responsive, and role-based platform for students and administrators.
 
-- 🔐 Role-based authentication (Admin / Student)
-- 📊 Dashboard with live stats and quick navigation
-- 📢 Announcements, Events, Timetable
-- 📝 Assignments, Activities (Quiz, Seminar, Jignasa, Tech Sakhi, Workshops…)
-- 📚 Resources & E-Library (Video Lessons, PPTs, T-SAT, MOOCs…)
-- 🤝 Mentor / Mentee management
-- 📈 Student Progression (Placements, Higher Studies, Achievements)
-- ⚠️ Grievances management
-- 👩‍🎓 Students & Faculty management with CSV import/export
-- 🗂️ **College Tabs** — 3 sections × 18 tabs, all editable with CSV upload/download:
-  - **Skill Enhancement**: Certificate Courses, Student Research, Fieldtech, MOOCs, Jignasa
-  - **Student Centric**: Bridge Courses, Group Discussions, Seminars, Quiz, Assignments
-  - **Other Activities**: Extension Lectures, Workshops, Video Lessons, Results, E-Library, Technology Updates, Career Guidance, Personal Counselling, Social Responsibilities, T-SAT Lessons, Remedial Coaching, Tech Skills Advanced Learners
+🌟 Key Features
+🔐 Authentication & Access Control
+Secure role-based login system (Admin / Student)
+Controlled access to features based on user roles
+📊 Dashboard & Navigation
+Interactive dashboard with real-time insights
+Quick navigation to all major modules
+📢 Academic & Communication Modules
+Announcements & Events Management
+Timetable Scheduling
+Assignment Tracking
+📝 Student Activities
+Quiz, Seminars, Workshops
+Jignasa, Tech Sakhi, and more
+Participation tracking and records
+📚 Resources & E-Library
+Video lessons, PPTs, T-SAT content
+MOOCs and digital learning materials
+🤝 Mentorship System
+Mentor–Mentee allocation and tracking
+📈 Student Progression
+Placements
+Higher Studies
+Achievements tracking
+⚠️ Grievance Management
+Submit and manage student grievances efficiently
+👩‍🎓 Data Management
+Student & Faculty records
+CSV Import/Export support
+Easy data editing and management
+🗂️ College Tabs Module
 
----
+Comprehensive academic tracking divided into 3 major sections with 18 customizable tabs:
 
-## 🚀 Setup & Run
+🎯 Skill Enhancement
+Certificate Courses
+Student Research
+Fieldtech
+MOOCs
+Jignasa
+🎓 Student-Centric Activities
+Bridge Courses
+Group Discussions
+Seminars
+Quiz & Assignments
+🌐 Other Activities
+Extension Lectures
+Workshops
+Video Lessons
+Results
+E-Library
+Technology Updates
+Career Guidance
+Personal Counselling
+Social Responsibility
+T-SAT Lessons
+Remedial Coaching
+Advanced Tech Skills
 
-### Prerequisites
-- Python 3.9+
-- Node.js 18+ and npm
+All tabs support CSV upload/download and editing.
 
----
-
-### 1. Backend (Flask API)
-
-```bash
+🚀 Getting Started
+🔧 Prerequisites
+Python 3.9+
+Node.js 18+
+npm
+⚙️ Backend Setup (Flask API)
 cd backend
 
 # Create virtual environment
 python -m venv venv
 
-# Activate it
+# Activate environment
 # Windows:
 venv\Scripts\activate
+
 # macOS/Linux:
 source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Run the server
+# Run server
 python app.py
-```
 
-Backend runs at: **http://localhost:5000**
+📍 Backend URL: http://localhost:5000
 
----
-
-### 2. Frontend (React)
-
-```bash
+🎨 Frontend Setup (React)
 cd frontend
 
 # Install dependencies
@@ -62,111 +98,70 @@ npm install
 
 # Start development server
 npm start
-```
 
-Frontend runs at: **http://localhost:3000**
+📍 Frontend URL: http://localhost:3000
 
-The React app proxies `/api` calls to the Flask backend automatically.
+The frontend automatically proxies API requests to the backend.
 
----
-
-## 🔑 Demo Login Credentials
-
-| Role    | Username  | Password    |
-|---------|-----------|-------------|
-| Admin   | `admin`   | `admin123`  |
-| Student | `student` | `student123`|
-
-**Admin** can: Add, Edit, Delete records, Import/Export CSV, Clear data  
-**Student** can: View all data, Export CSV
-
----
-
-## 📁 Project Structure
-
-```
+🔑 Demo Credentials
+Role	Username	Password
+Admin	admin	admin123
+Student	student	student123
+👨‍💼 Admin Capabilities
+Add, Edit, Delete data
+Import/Export CSV
+Clear records
+🎓 Student Capabilities
+View all data
+Export CSV
+📁 Project Structure
 college-companion/
+│
 ├── backend/
-│   ├── app.py              # Flask API (all routes, CRUD, auth)
-│   ├── requirements.txt    # Python dependencies
-│   └── data/               # JSON data files (auto-created on first run)
+│   ├── app.py
+│   ├── requirements.txt
+│   └── data/
 │       ├── users.json
 │       ├── announcements.json
-│       ├── activities.json
-│       └── ... (one file per resource)
+│       └── ...
 │
 └── frontend/
-    ├── public/index.html
+    ├── public/
     ├── package.json
     └── src/
-        ├── App.jsx             # Routes
-        ├── index.js            # Entry point
-        ├── index.css           # Global styles (Royal Blue + Gold theme)
-        ├── context/
-        │   └── AuthContext.jsx # Auth state management
-        ├── utils/
-        │   └── api.js          # Axios instance
         ├── components/
-        │   ├── Layout.jsx      # App shell (sidebar + topbar)
-        │   ├── Sidebar.jsx     # Navigation sidebar
-        │   └── CrudTable.jsx   # Reusable CRUD table component
-        └── pages/
-            ├── Login.jsx
-            ├── Dashboard.jsx
-            ├── Announcements.jsx
-            ├── Events.jsx
-            ├── Timetable.jsx
-            ├── Assignments.jsx
-            ├── Activities.jsx
-            ├── Resources.jsx
-            ├── CollegeTabs.jsx  # All 18 college tabs
-            ├── MentorMentee.jsx
-            ├── Progression.jsx
-            ├── Grievances.jsx
-            ├── Students.jsx
-            └── Faculty.jsx
-```
+        ├── pages/
+        ├── context/
+        ├── utils/
+        └── App.jsx
+📥 CSV Import Format
+Students
+student_id, name, course, year, section, roll_no, phone, email, dob, category, address, guardian, guardian_phone
+Faculty
+faculty_id, name, designation, department, qualification, specialization, phone, email, type, joining_date, experience
+Activities
+title, type, date, venue, coordinator, status, description, participants
+Certificate Courses
+student_name, roll_no, course, year, certificate_name, issuing_body, duration, completion_date, grade, remarks
+🎨 UI & Design
+Primary Color: Deep Royal Blue (#1a2b6b)
+Accent Color: Warm Gold (#c9a227)
+Fonts:
+Headings: Cormorant Garamond
+Body: DM Sans
 
----
+✔ Fully responsive design (desktop + mobile)
 
-## 📥 CSV Import Format
+🚀 Production Deployment
 
-Each page supports CSV import. Use these column headers:
+For deploying the application:
 
-### Students
-`student_id, name, course, year, section, roll_no, phone, email, dob, category, address, guardian, guardian_phone`
+Build frontend:
+npm run build
+Serve the build/ folder via Flask or a web server
+Use a production database (PostgreSQL / MySQL)
+Configure a secure SECRET_KEY
+Enable HTTPS for security
+📌 Conclusion
 
-### Faculty
-`faculty_id, name, designation, department, qualification, specialization, phone, email, type, joining_date, experience`
-
-### Activities
-`title, type, date, venue, coordinator, status, description, participants`
-
-### College Tabs — Certificate Courses
-`student_name, roll_no, course, year, certificate_name, issuing_body, duration, completion_date, grade, remarks`
-
-*(See the app's CSV export for exact column headers of any tab)*
-
----
-
-## 🎨 Design
-
-- **Primary**: Deep Royal Blue (`#1a2b6b`)
-- **Accent**: Warm Gold (`#c9a227`)
-- **Typography**: Cormorant Garamond (headings) + DM Sans (body)
-- Responsive design for desktop and mobile
-
----
-
-## 🔧 Production Deployment
-
-For production:
-1. Run `npm run build` in the frontend folder
-2. Serve the `build/` folder as static files via Flask or Nginx
-3. Use a proper database (PostgreSQL/MySQL) instead of JSON files
-4. Set a strong `SECRET_KEY` in `app.py`
-5. Use HTTPS
-
----
-
-*Built for Pingle Govt. College for Women (A), Wanapathy, Hanumakonda, Telangana*
+The College Companion App provides a centralized, scalable, and user-friendly platform for managing academic, administrative, and student-centric activities efficiently. It enhances digital transformation within educational institutions.
